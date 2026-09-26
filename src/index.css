@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 340 30% 97%;
+    --foreground: 340 20% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 340 20% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 20% 18%;
+
+    --primary: 340 85% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 95% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 340 25% 93%;
+    --muted-foreground: 340 12% 45%;
+
+    --accent: 270 80% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 25% 88%;
+    --input: 340 25% 88%;
+    --ring: 340 85% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(340 85% 60%) 0%, hsl(25 95% 60%) 50%, hsl(270 80% 65%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(340 30% 98%) 0%, hsl(340 30% 94%) 100%);
+    --glow-pink: 340 85% 60%;
+    --glow-orange: 25 95% 60%;
+    --glow-purple: 270 80% 65%;
+    
+    --sidebar-background: 340 30% 96%;
+    --sidebar-foreground: 340 20% 18%;
+    --sidebar-primary: 340 85% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 340 25% 92%;
+    --sidebar-accent-foreground: 340 20% 18%;
+    --sidebar-border: 340 25% 88%;
+    --sidebar-ring: 340 85% 60%;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 182, 193, 0.25);
+    box-shadow: 0 8px 32px -12px hsl(var(--glow-pink) / 0.15);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 30px -5px hsl(var(--glow-pink) / 0.4);
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px -5px hsl(var(--glow-pink) / 0.25);
+    }
+    to {
+      box-shadow: 0 0 40px 0px hsl(var(--glow-pink) / 0.45), 
+                  0 0 60px 0px hsl(var(--glow-orange) / 0.35);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
