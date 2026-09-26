@@ -1,82 +1,111 @@
 # Visionary AI – AI Creative Studio
 
-Visionary AI is a web-based AI Creative Studio that helps users generate **stories and images from simple text prompts**.
+Visionary AI is a web-based AI Creative Studio that allows users to generate **stories and images from text prompts** through a simple and interactive interface.
 
-The application provides a simple interface where users can enter their ideas, select options, and receive AI-generated creative content.
+The application provides separate tools for AI-powered story generation and image generation, along with options to copy or download the generated content.
 
 ## Features
 
-### AI Story Generator
+### ✍️ AI Story Generator
 
-* Enter a story idea using a text prompt.
-* Select an optional genre such as Fantasy, Science Fiction, Mystery, Romance, Horror, Adventure, or Thriller.
-* Generate a complete story using AI.
-* Copy the generated story.
-* Download the story as a text file.
+* Generate stories from text prompts.
+* Select a story genre.
+* Supported genres:
 
-### AI Image Generator
+  * Fantasy
+  * Science Fiction
+  * Mystery
+  * Romance
+  * Horror
+  * Adventure
+  * Thriller
+* Display the generated story directly in the application.
+* Copy the generated story to the clipboard.
+* Download the generated story as a `.txt` file.
 
-* Enter a description of the image you want to create.
-* Generate an image using AI.
-* View the generated image directly in the application.
+### 🎨 AI Image Generator
+
+* Generate images from text prompts.
+* Display the generated image in the application.
 * Download the generated image.
+
+### 💻 User Interface
+
+* Responsive and modern interface.
+* Interactive Story and Image Generator sections.
+* Loading states while content is being generated.
+* Error handling for failed requests.
+* Reusable React components.
+
+---
 
 ## Technologies Used
 
 ### Frontend
 
-* **React** – Used to build the application interface using reusable components.
-* **TypeScript** – Used to write structured and type-safe React code.
-* **HTML** – Used for the basic structure of the web application.
-* **CSS** – Used for styling and visual design.
-* **Tailwind CSS** – Used to create the layout, spacing, colors, buttons, cards, and responsive design.
+* **React** – Building the user interface using reusable components.
+* **TypeScript** – Writing structured and type-safe application code.
+* **HTML** – Structuring the web application.
+* **CSS** – Styling the application.
+* **Tailwind CSS** – Creating responsive layouts and UI styling.
+* **React Router** – Handling application navigation.
+* **Lucide React** – Providing interface icons.
 
-### Backend / AI Integration
+### Backend & AI Integration
 
-* **Supabase** – Used to connect the frontend with backend functions that handle the story and image generation requests.
-* **AI API / Model** – Used to generate stories and images based on the user's prompts.
+* **Supabase** – Used for backend Edge Functions and communication between the frontend and AI generation services.
+* **AI Generation API** – Used for generating stories and images from user prompts.
 
 ### Development Tools
 
-* **Git** – Used for version control.
-* **GitHub** – Used to store and manage the project source code.
-* **VS Code** – Used for development and code editing.
+* **Vite** – Frontend development and build tool.
+* **Git** – Version control.
+* **GitHub** – Source code management.
+* **VS Code** – Development environment.
 
-## How the Application Works
+---
+
+## How It Works
 
 ### Story Generation
 
 ```text
-User enters story prompt
-        ↓
-User selects genre
-        ↓
-Frontend sends the request
-        ↓
-Supabase backend function
-        ↓
-AI generates the story
-        ↓
-Generated story is displayed
-        ↓
-User can copy or download it
+User enters a story prompt
+          ↓
+User selects a genre
+          ↓
+React frontend sends the request
+          ↓
+Supabase Edge Function
+          ↓
+AI generation service
+          ↓
+Generated story returned
+          ↓
+Story displayed in the application
+          ↓
+User can copy or download the story
 ```
 
 ### Image Generation
 
 ```text
-User enters image prompt
-        ↓
-Frontend sends the request
-        ↓
-Supabase backend function
-        ↓
-AI generates the image
-        ↓
-Generated image is displayed
-        ↓
+User enters an image prompt
+          ↓
+React frontend sends the request
+          ↓
+Supabase Edge Function
+          ↓
+AI image generation service
+          ↓
+Generated image returned
+          ↓
+Image displayed in the application
+          ↓
 User can download the image
 ```
+
+---
 
 ## Project Structure
 
@@ -91,78 +120,116 @@ visionary-ai/
 │   │   ├── Hero.tsx
 │   │   ├── Studio.tsx
 │   │   ├── StoryGenerator.tsx
-│   │   └── ImageGenerator.tsx
+│   │   ├── ImageGenerator.tsx
+│   │   └── ui/
 │   │
 │   ├── integrations/
 │   │   └── supabase/
 │   │
 │   ├── pages/
 │   │
+│   ├── App.tsx
 │   └── main.tsx
 │
 ├── supabase/
-│   └── Backend functions
+│   └── functions/
+│       ├── generate-story/
+│       └── generate-image/
 │
 ├── package.json
+├── package-lock.json
+├── vite.config.ts
 ├── index.html
 └── README.md
 ```
 
-## Installation
+---
 
-### 1. Clone the repository
+## Installation and Setup
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+* Node.js
+* npm
+* Git
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/kavipriyasp07/visionary-ai.git
 ```
 
-### 2. Open the project
+### 2. Navigate to the Project
 
 ```bash
 cd visionary-ai
 ```
 
-### 3. Install dependencies
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Start the application
+### 4. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-The application will run on the local development server provided by the terminal.
+The terminal will display a local development URL, usually:
+
+```text
+http://localhost:5173/
+```
+
+Open the URL in your browser.
+
+---
 
 ## Usage
 
-1. Open the application.
+1. Open the application in your browser.
 2. Click **Start Creating**.
-3. Choose either **Story Generator** or **Image Generator**.
+3. Select **Story Generator** or **Image Generator**.
 4. Enter your prompt.
-5. Generate the content.
-6. View, copy, or download the generated result.
+5. Select a genre if using the Story Generator.
+6. Click the generate button.
+7. View the generated result.
+8. Copy or download the generated content.
+
+---
 
 ## Key React Concepts Used
 
+This project demonstrates practical use of:
+
 * React functional components
-* `useState` for managing user input and generated results
-* Props for passing functions between components
+* React `useState`
+* Props
 * Event handling
 * Conditional rendering
-* API/backend function calls
+* Form and user-input handling
+* Asynchronous API requests
+* Backend function invocation
+* Loading and error states
 * Reusable UI components
+
+---
 
 ## Future Improvements
 
 * Add user authentication.
-* Save generated stories and images.
-* Add more image and story generation options.
 * Add generation history.
+* Allow users to save generated stories and images.
+* Add more customization options for image generation.
 * Improve prompt handling.
+* Add additional AI-powered creative tools.
 * Deploy the application for public access.
+
+---
 
 ## Author
 
@@ -170,3 +237,5 @@ The application will run on the local development server provided by the termina
 
 B.Tech Artificial Intelligence and Data Science
 2023–2027
+
+GitHub: https://github.com/kavipriyasp07
