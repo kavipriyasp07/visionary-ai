@@ -1,73 +1,172 @@
-# Welcome to your Lovable project
+# Visionary AI – AI Creative Studio
 
-## Project info
+Visionary AI is a web-based AI Creative Studio that helps users generate **stories and images from simple text prompts**.
 
-**URL**: https://lovable.dev/projects/35de96c1-46b2-43da-ad83-97e4c6cc59d5
+The application provides a simple interface where users can enter their ideas, select options, and receive AI-generated creative content.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+### AI Story Generator
 
-**Use Lovable**
+* Enter a story idea using a text prompt.
+* Select an optional genre such as Fantasy, Science Fiction, Mystery, Romance, Horror, Adventure, or Thriller.
+* Generate a complete story using AI.
+* Copy the generated story.
+* Download the story as a text file.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/35de96c1-46b2-43da-ad83-97e4c6cc59d5) and start prompting.
+### AI Image Generator
 
-Changes made via Lovable will be committed automatically to this repo.
+* Enter a description of the image you want to create.
+* Generate an image using AI.
+* View the generated image directly in the application.
+* Download the generated image.
 
-**Use your preferred IDE**
+## Technologies Used
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Frontend
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* **React** – Used to build the application interface using reusable components.
+* **TypeScript** – Used to write structured and type-safe React code.
+* **HTML** – Used for the basic structure of the web application.
+* **CSS** – Used for styling and visual design.
+* **Tailwind CSS** – Used to create the layout, spacing, colors, buttons, cards, and responsive design.
 
-Follow these steps:
+### Backend / AI Integration
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+* **Supabase** – Used to connect the frontend with backend functions that handle the story and image generation requests.
+* **AI API / Model** – Used to generate stories and images based on the user's prompts.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Development Tools
 
-# Step 3: Install the necessary dependencies.
-npm i
+* **Git** – Used for version control.
+* **GitHub** – Used to store and manage the project source code.
+* **VS Code** – Used for development and code editing.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## How the Application Works
+
+### Story Generation
+
+```text
+User enters story prompt
+        ↓
+User selects genre
+        ↓
+Frontend sends the request
+        ↓
+Supabase backend function
+        ↓
+AI generates the story
+        ↓
+Generated story is displayed
+        ↓
+User can copy or download it
+```
+
+### Image Generation
+
+```text
+User enters image prompt
+        ↓
+Frontend sends the request
+        ↓
+Supabase backend function
+        ↓
+AI generates the image
+        ↓
+Generated image is displayed
+        ↓
+User can download the image
+```
+
+## Project Structure
+
+```text
+visionary-ai/
+│
+├── public/
+│   └── Public assets
+│
+├── src/
+│   ├── components/
+│   │   ├── Hero.tsx
+│   │   ├── Studio.tsx
+│   │   ├── StoryGenerator.tsx
+│   │   └── ImageGenerator.tsx
+│   │
+│   ├── integrations/
+│   │   └── supabase/
+│   │
+│   ├── pages/
+│   │
+│   └── main.tsx
+│
+├── supabase/
+│   └── Backend functions
+│
+├── package.json
+├── index.html
+└── README.md
+```
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/kavipriyasp07/visionary-ai.git
+```
+
+### 2. Open the project
+
+```bash
+cd visionary-ai
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the application
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will run on the local development server provided by the terminal.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Usage
 
-**Use GitHub Codespaces**
+1. Open the application.
+2. Click **Start Creating**.
+3. Choose either **Story Generator** or **Image Generator**.
+4. Enter your prompt.
+5. Generate the content.
+6. View, copy, or download the generated result.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Key React Concepts Used
 
-## What technologies are used for this project?
+* React functional components
+* `useState` for managing user input and generated results
+* Props for passing functions between components
+* Event handling
+* Conditional rendering
+* API/backend function calls
+* Reusable UI components
 
-This project is built with:
+## Future Improvements
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+* Add user authentication.
+* Save generated stories and images.
+* Add more image and story generation options.
+* Add generation history.
+* Improve prompt handling.
+* Deploy the application for public access.
 
-## How can I deploy this project?
+## Author
 
-Simply open [Lovable](https://lovable.dev/projects/35de96c1-46b2-43da-ad83-97e4c6cc59d5) and click on Share -> Publish.
+**Kavipriya S.P.**
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+B.Tech Artificial Intelligence and Data Science
+2023–2027
