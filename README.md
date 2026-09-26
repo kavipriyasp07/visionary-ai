@@ -1,16 +1,15 @@
-# Visionary AI – AI Creative Studio
+# Visionary AI — AI Creative Studio
 
-Visionary AI is a web-based AI Creative Studio that allows users to generate **stories and images from text prompts** through a simple and interactive interface.
+Visionary AI is a web-based AI application that enables users to generate **stories and images from natural-language prompts** through an interactive and responsive interface.
 
-The application provides separate tools for AI-powered story generation and image generation, along with options to copy or download the generated content.
+The application integrates a React-based frontend with backend functions to process user requests and return AI-generated creative content.
 
 ## Features
 
-### ✍️ AI Story Generator
+### AI Story Generation
 
-* Generate stories from text prompts.
-* Select a story genre.
-* Supported genres:
+* Generate stories from user-provided prompts.
+* Select from multiple genres including:
 
   * Fantasy
   * Science Fiction
@@ -19,90 +18,108 @@ The application provides separate tools for AI-powered story generation and imag
   * Horror
   * Adventure
   * Thriller
-* Display the generated story directly in the application.
-* Copy the generated story to the clipboard.
-* Download the generated story as a `.txt` file.
+* Display generated stories within the application.
+* Copy generated stories to the clipboard.
+* Download generated stories as text files.
 
-### 🎨 AI Image Generator
+### AI Image Generation
 
-* Generate images from text prompts.
-* Display the generated image in the application.
-* Download the generated image.
+* Generate images from text-based prompts.
+* Display generated images within the application.
+* Download generated images directly from the interface.
 
-### 💻 User Interface
+### Application Features
 
-* Responsive and modern interface.
-* Interactive Story and Image Generator sections.
-* Loading states while content is being generated.
-* Error handling for failed requests.
+* Responsive user interface.
 * Reusable React components.
+* Input validation.
+* Loading and error states.
+* Asynchronous backend requests.
+* Copy and download functionality.
+* Tab-based navigation between story and image generation.
 
 ---
 
-## Technologies Used
+## Technology Stack
 
 ### Frontend
 
-* **React** – Building the user interface using reusable components.
-* **TypeScript** – Writing structured and type-safe application code.
-* **HTML** – Structuring the web application.
-* **CSS** – Styling the application.
-* **Tailwind CSS** – Creating responsive layouts and UI styling.
-* **React Router** – Handling application navigation.
-* **Lucide React** – Providing interface icons.
+| Technology   | Purpose                           |
+| ------------ | --------------------------------- |
+| React        | Component-based user interface    |
+| TypeScript   | Type-safe application development |
+| HTML         | Application structure             |
+| CSS          | Styling and presentation          |
+| Tailwind CSS | Responsive UI styling             |
+| React Router | Client-side navigation            |
+| Lucide React | Interface icons                   |
 
-### Backend & AI Integration
+### Backend and AI Integration
 
-* **Supabase** – Used for backend Edge Functions and communication between the frontend and AI generation services.
-* **AI Generation API** – Used for generating stories and images from user prompts.
+| Technology        | Purpose                                     |
+| ----------------- | ------------------------------------------- |
+| Supabase          | Backend Edge Functions and request handling |
+| AI Generation API | Story and image generation                  |
 
 ### Development Tools
 
-* **Vite** – Frontend development and build tool.
-* **Git** – Version control.
-* **GitHub** – Source code management.
-* **VS Code** – Development environment.
+| Tool    | Purpose                           |
+| ------- | --------------------------------- |
+| Vite    | Development server and build tool |
+| Git     | Version control                   |
+| GitHub  | Source code management            |
+| VS Code | Development environment           |
 
 ---
 
-## How It Works
+## Application Architecture
 
-### Story Generation
+### Story Generation Flow
 
 ```text
-User enters a story prompt
-          ↓
-User selects a genre
-          ↓
-React frontend sends the request
-          ↓
+User Input
+    |
+    v
+Story Prompt + Genre
+    |
+    v
+React Frontend
+    |
+    v
 Supabase Edge Function
-          ↓
-AI generation service
-          ↓
-Generated story returned
-          ↓
-Story displayed in the application
-          ↓
-User can copy or download the story
+    |
+    v
+AI Generation Service
+    |
+    v
+Generated Story
+    |
+    v
+Display / Copy / Download
 ```
 
-### Image Generation
+### Image Generation Flow
 
 ```text
-User enters an image prompt
-          ↓
-React frontend sends the request
-          ↓
+User Input
+    |
+    v
+Image Prompt
+    |
+    v
+React Frontend
+    |
+    v
 Supabase Edge Function
-          ↓
-AI image generation service
-          ↓
-Generated image returned
-          ↓
-Image displayed in the application
-          ↓
-User can download the image
+    |
+    v
+AI Image Generation Service
+    |
+    v
+Generated Image
+    |
+    v
+Display / Download
 ```
 
 ---
@@ -134,7 +151,10 @@ visionary-ai/
 ├── supabase/
 │   └── functions/
 │       ├── generate-story/
+│       │   └── index.ts
+│       │
 │       └── generate-image/
+│           └── index.ts
 │
 ├── package.json
 ├── package-lock.json
@@ -149,85 +169,85 @@ visionary-ai/
 
 ### Prerequisites
 
-Make sure you have the following installed:
+Install the following before running the project:
 
 * Node.js
 * npm
 * Git
 
-### 1. Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/kavipriyasp07/visionary-ai.git
 ```
 
-### 2. Navigate to the Project
+### Navigate to the Project Directory
 
 ```bash
 cd visionary-ai
 ```
 
-### 3. Install Dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Start the Development Server
+### Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-The terminal will display a local development URL, usually:
+The Vite development server will provide a local URL, typically:
 
 ```text
 http://localhost:5173/
 ```
 
-Open the URL in your browser.
+Open the URL in a web browser to access the application.
 
 ---
 
 ## Usage
 
-1. Open the application in your browser.
-2. Click **Start Creating**.
-3. Select **Story Generator** or **Image Generator**.
-4. Enter your prompt.
-5. Select a genre if using the Story Generator.
-6. Click the generate button.
-7. View the generated result.
-8. Copy or download the generated content.
+1. Launch the application using the development server.
+2. Select the Story Generator or Image Generator.
+3. Enter a natural-language prompt.
+4. Select a genre when generating a story.
+5. Submit the request.
+6. View the generated result.
+7. Copy or download the generated content.
 
 ---
 
-## Key React Concepts Used
+## React Concepts Demonstrated
 
-This project demonstrates practical use of:
+This project demonstrates practical implementation of:
 
-* React functional components
-* React `useState`
-* Props
+* Functional React components
+* React Hooks, including `useState`
+* Props and component communication
 * Event handling
 * Conditional rendering
 * Form and user-input handling
-* Asynchronous API requests
+* Asynchronous operations
 * Backend function invocation
-* Loading and error states
+* Error handling
+* Loading-state management
 * Reusable UI components
 
 ---
 
-## Future Improvements
+## Future Enhancements
 
-* Add user authentication.
-* Add generation history.
-* Allow users to save generated stories and images.
-* Add more customization options for image generation.
-* Improve prompt handling.
-* Add additional AI-powered creative tools.
-* Deploy the application for public access.
+* User authentication and personalized accounts
+* Generation history and saved content
+* Additional story and image customization options
+* Improved prompt processing
+* Content management and organization
+* Additional AI-powered creative features
+* Production deployment
 
 ---
 
