@@ -167,7 +167,8 @@ visionary-ai/
 ## output##
 <img width="1911" height="999" alt="image" src="https://github.com/user-attachments/assets/3cdfdaea-2510-4b77-ad13-51de2cf740a1" />
 <img width="1232" height="786" alt="image" src="https://github.com/user-attachments/assets/3c8ce6fc-06dd-4c97-ae00-7303282626fb" />
-<img width="1232" height="786" alt="image" src="https://github.com/user-attachments/assets/e9d5e614-dde9-46c6-aa62-add8751969ae" />
+<img width="855" height="744" alt="Screenshot 2026-09-26 131909" src="https://github.com/user-attachments/assets/e2e870f2-9cf7-499c-9225-aa8aa63b2948" />
+
 <img width="772" height="811" alt="image" src="https://github.com/user-attachments/assets/2b7ff0fd-2ac4-45f2-a141-28f63ae2ce61" />
 
 
